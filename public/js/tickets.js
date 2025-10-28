@@ -46,16 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
     listContainer.innerHTML = tickets
       .map(
         (t) => `
-      <div class="ticket-card ${t.status}">
-        <h3>${t.title}</h3>
-        <p>${t.description}</p>
-        <p><strong>Status:</strong> ${t.status}</p>
-        <p><strong>Priority:</strong> ${t.priority}</p>
-        <div class="ticket-actions">
-          <button class="edit-btn" data-id="${t.id}">Edit</button>
-          <button class="delete-btn" data-id="${t.id}">Delete</button>
-        </div>
-      </div>`
+      <li
+            class="ticket-card ${t.status}"
+            tabindex="0"
+            aria-label="Ticket titled ${t.title}, status ${t.status}, priority ${t.priority}"
+          >
+            <header class="ticket-header">
+              <h3>${t.title}</h3>
+              <span class="status ${t.status}">
+                ${t.status.replace("_", " ")}
+              </span>
+            </header>
+
+            <span
+              class="priority-pill ${t.priority}"
+              aria-label="Priority ${t.priority}"
+            >
+              ${t.priority}
+            </span>
+
+            ${
+              t.description
+                ? `<p class="ticket-description">${t.description}</p>`
+                : ""
+            }
+
+            <div class="ticket-actions">
+              <button class="edit-btn" data-id="${t.id}">Edit</button>
+              <button class="delete-btn delete" data-id="${t.id}">Delete</button>
+            </div>
+          </li>`
       )
       .join("");
 
