@@ -12,9 +12,20 @@
     <h2 class="logo">Ticketrax</h2>
     <nav>
       <ul>
-        <li><a href="/dashboard" class="active">Dashboard</a></li>
-        <li><a href="/tickets">Ticket Management</a></li>
-        <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+        <li>
+        <button class='active'>
+         <a href="/dashboard" class="active">Dashboard</a></button>
+       </li>
+        <li>
+         <button >
+         <a href="/tickets" class="active">Ticket Management</a></button>
+       
+        
+        </li>
+        <li><button id="logout-btn" class="logout-btn">Logout</button>
+        
+        
+        </li>
       </ul>
     </nav>
   </aside>
@@ -25,7 +36,9 @@
         <h2>Dashboard Overview</h2>
         <p>Welcome back! Here’s an overview of your tickets.</p>
       </div>
-      <a href="/tickets" class="btn-primary">Go to Ticket Management</a>
+      <button class="btn-primary">
+      <a href="/tickets" >Go to Ticket Management</a></button>
+      
     </section>
 
     <section class="stats-grid">
@@ -38,10 +51,6 @@
 </div>
 
 <script src="/js/dashboard.js"></script>
-<script >
-  import { protectRoute } from '/utils/auth.js';
-
-  protectRoute();
-</script>
+<script src="/js/utils/auth.js"></script>
 
 {% endblock %}

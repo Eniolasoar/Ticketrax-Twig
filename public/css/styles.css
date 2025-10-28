@@ -235,7 +235,27 @@
     "M0,160 C200,280 400,40 600,80, C1000,220 1200,80 1440,200 L1440,320 L0,320 Z"
   );
 }
+button a, a{
+  color:white !important;
+  text-decoration:none;
+}
+.hidden{
+  display:none !important;
+}
+#ticket-form input, #ticket-form textarea, #ticket-form select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
 
+#ticket-form label {
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
 .toast {
   position: fixed;
   top: 30px;
