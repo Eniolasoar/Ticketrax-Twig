@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block title %}Ticketrax — Track it. Fix it. Move forward.{% endblock %}
+
+{% block content %}
+  {% include 'landing/navbar.twig' %}
+  <main>
+    {% include 'landing/hero.twig' %}
+    <section class="container section">
+      {% include 'landing/features.twig' %}
+    </section>
+    <section class="container section">
+      {% include 'landing/banner.twig' %}
+    </section>
+  </main>
+  {% include '../shared/footer.twig' %}
+{% endblock %}

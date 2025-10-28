@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+{% block title %}Dashboard - Ticketrax{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <header class="mobile-header">
+    <button id="menu-toggle" aria-label="Toggle sidebar">☰</button>
+    <h1 class="mobile-title">Ticketrax Dashboard</h1>
+  </header>
+
+  <aside id="sidebar" class="sidebar">
+    <h2 class="logo">Ticketrax</h2>
+    <nav>
+      <ul>
+        <li><a href="/dashboard" class="active">Dashboard</a></li>
+        <li><a href="/tickets">Ticket Management</a></li>
+        <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <section class="content-header">
+      <div>
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back! Here’s an overview of your tickets.</p>
+      </div>
+      <a href="/tickets" class="btn-primary">Go to Ticket Management</a>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card" id="total-stat"><h4>Total Tickets</h4><p>0</p></div>
+      <div class="stat-card open" id="open-stat"><h4>Open</h4><p>0</p></div>
+      <div class="stat-card in-progress" id="progress-stat"><h4>In Progress</h4><p>0</p></div>
+      <div class="stat-card closed" id="closed-stat"><h4>Closed</h4><p>0</p></div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/dashboard.js"></script>
+<script >
+  import { protectRoute } from '/utils/auth.js';
+
+  protectRoute();
+</script>
+
+{% endblock %}

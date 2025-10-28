@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+{% block title %}Tickets - Ticketrax{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <header class="mobile-header">
+    <button id="menu-toggle" aria-label="Toggle sidebar">☰</button>
+    <h1 class="mobile-title">Ticketrax</h1>
+  </header>
+
+  <aside id="sidebar" class="sidebar">
+    <h2 class="logo">Ticketrax</h2>
+    <nav>
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/tickets" class="active">Ticket Management</a></li>
+        <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <div class="content-header">
+      <h2>Ticket Management</h2>
+      <button id="create-ticket-btn" class="btn-primary">+ Create Ticket</button>
+    </div>
+
+    <section id="ticket-list" class="ticket-list"></section>
+  </main>
+</div>
+
+<script src="/js/tickets.js"></script>
+<script>
+ import { protectRoute } from '/utils/auth.js';
+ protectRoute();
+</script>
+
+{% endblock %}

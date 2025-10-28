@@ -1,0 +1,138 @@
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  .content-header button{
+    width: fit-content;
+  }
+  
+  .ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding-left:0px !important;
+  }
+
+  li{
+    list-style-type: none;
+  }
+  
+  /* Ticket cards */
+  .ticket-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  .ticket-card .priority-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+  
+  .priority-pill.low {
+    background: #d1fae5;
+    color: #047857;
+  }
+  
+  .priority-pill.medium {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  
+  .priority-pill.high {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  /* Modal overlay */
+  .modal-overlay,
+  .confirm-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+  }
+  
+  .modal-content,
+  .confirm-box {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  
+  .modal-content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Confirmation box */
+  .confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .confirm-box button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .confirm-box .delete {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .empty-state p {
+    margin-bottom: 1rem;
+    color: #6b7280;
+  }
+  @media (min-width: 600px) and (max-width: 900px) {
+  
+    /* 🔹 Two-column grid for tablets */
+    .ticket-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 700px;
+    }
+  
+    .ticket-card {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: var(--soft-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
+      background: #fff;
+      margin-right: 10px;
+    }
+  }

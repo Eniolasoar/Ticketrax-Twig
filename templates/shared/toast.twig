@@ -1,0 +1,8 @@
+<div class="toast toast-{{ type }}" role="alert" aria-live="assertive" aria-atomic="true">
+  {{ message }}
+</div>
+<script>
+  setTimeout(() => {
+    document.querySelector('.toast')?.remove();
+  }, 3000);
+</script>
